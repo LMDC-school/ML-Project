@@ -21,7 +21,7 @@ This is a supervised regression problem on panel data (many stocks observed over
 
 | File | Content | Use in this project |
 |---|---|---|
-| `sp500_stocks.csv` | Daily open, high, low, close, adjusted close and volume for each stock | Main data: all stock-level features and the target |
+| `sp500_stocks.csv.xz` | Daily open, high, low, close, adjusted close and volume for each stock (xz-compressed; pandas reads it directly) | Main data: all stock-level features and the target |
 | `sp500_companies.csv` | One row per company: sector, industry, market cap, etc. | Only the `Sector` column |
 
 ### 2. FRED — Federal Reserve Bank of St. Louis
