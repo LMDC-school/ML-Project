@@ -1,4 +1,4 @@
-# Large raw data (275 MB, over GitHub limit) - download from Kaggle, see README
+# Uncompressed raw data (275 MB, over GitHub limit) - the repo ships data/sp500_stocks.csv.xz instead
 data/sp500_stocks.csv
 
 # macOS
