@@ -1,0 +1,13 @@
+# Large raw data (275 MB, over GitHub limit) - download from Kaggle, see README
+data/sp500_stocks.csv
+
+# macOS
+.DS_Store
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
