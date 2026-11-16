@@ -1,0 +1,34 @@
+[project]
+name = "sp500-volatility"
+version = "0.1.0"
+description = "Predicting next-week realized volatility of S&P 500 stocks"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "graphviz",
+    "ipython",
+    "joblib",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "scikit-learn",
+]
+
+[project.scripts]
+build-dataset = "sp500_volatility.transforms:main"
+train = "sp500_volatility.train:main"
+app = "sp500_volatility.app:main"
+
+[dependency-groups]
+dev = [
+    "dill",
+    "ipykernel",
+    "jupyter",
+    "nbstripout",
+    "pre-commit",
+]
+
+[build-system]
+requires = ["uv_build>=0.9,<0.14"]
+build-backend = "uv_build"

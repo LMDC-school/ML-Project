@@ -47,3 +47,33 @@ Free economic data, downloaded directly by the script.
 - **Market proxy:** market volatility is computed as the equal-weighted average of all stocks, not from the official index.
 - The validation period includes the **COVID-19 crash of 2020**, an extreme event that makes it a demanding test.
 
+
+## Project structure
+
+```
+docs/                       overview, data preprocessing, ML choices, evaluation
+notebooks/
+  01_transforms.ipynb       loading, merging, cleaning, target and features
+  02_split_train_eval.ipynb splitting, training and evaluation experiments
+src/sp500_volatility/
+  transforms.py             raw files -> model-ready dataset
+  split.py                  train / validation / test split by time
+  train.py                  fit and save the model
+  metrics.py                scores and the two baselines
+  app.py                    load the transformed data and the model, predict and score
+data/                       raw data (data/processed/ and models/ are generated, not committed)
+```
+
+## Getting started
+
+Requires [uv](https://docs.astral.sh/uv/).
+
+```bash
+uv sync                       # create .venv with Python 3.13 and all dependencies
+uv run build-dataset          # raw files -> data/processed/dataset.parquet
+uv run train                  # fit on 2000-2018, save to models/, print validation scores
+uv run app --split valid      # load data and model, compare with the baselines
+uv run pre-commit install     # optional: strip notebook outputs on each commit
+```
+
+To use the notebooks, select the `.venv` kernel.
